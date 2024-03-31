@@ -1,6 +1,6 @@
 fun main(args: Array<String>) {
 
-    var capitals = hashMapOf<String, String>()
+    val capitals = hashMapOf<String, String>()
     capitals.put("Nepal", "Kathmandu")
     capitals.put("India", "New Delhi")
     capitals.put("United States", "Washington")
