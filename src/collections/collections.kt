@@ -4,6 +4,8 @@ fun main() {
     list()
     listWithWriteOperation()
     set()
+    map()
+    arrayDeque()
 }
 
 
@@ -42,4 +44,26 @@ fun map() {
     val anotherMap = mapOf("key2" to 2, "key1" to 1, "key4" to 1, "key3" to 3)
 
     println("The maps are equal regardless of the pair order: ${numbersMap == anotherMap}")
+}
+
+
+fun arrayDeque() {
+    /**
+     * is an implementation of a double-ended queue,
+     * which allows you to add or remove elements both at the beginning or end of the queue.
+     * As such, ArrayDeque also fills the role of both a Stack and Queue data structure in Kotlin. Behind the scenes,
+     * ArrayDeque is realized using a resizable array that automatically adjusts in size when required:
+     */
+    val deque = ArrayDeque(listOf(1, 2, 3))
+
+    deque.addFirst(0)
+    deque.addLast(4)
+    println(deque) // [0, 1, 2, 3, 4]
+
+    println(deque.first()) // 0
+    println(deque.last()) // 4
+
+    deque.removeFirst()
+    deque.removeLast()
+    println(deque) // [1, 2, 3]
 }
