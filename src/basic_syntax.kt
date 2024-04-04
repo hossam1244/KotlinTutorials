@@ -5,12 +5,12 @@ fun main() {
 /**
  * Variables
  */
- fun variables() {
+fun variables() {
     val a: Int = 1  // immediate assignment
     val b = 2   // `Int` type is inferred
     val c: Int  // Type required when no initializer is provided
     c = 3       // deferred assignment
- }
+}
 
 
 /**
@@ -49,7 +49,7 @@ class Rectangle(val height: Double, val length: Double) {
 
 open class ShapeOpen
 
-class RectangleInherit(val height: Double, val length: Double): ShapeOpen() {
+class RectangleInherit(val height: Double, val length: Double) : ShapeOpen() {
     val perimeter = (height + length) * 2
 }
 
@@ -79,3 +79,12 @@ fun whileLoop() {
         index++
     }
 }
+
+fun whenExpression(obj: Any): String =
+    when (obj) {
+        1 -> "One"
+        "Hello" -> "Greeting"
+        is Long -> "Long"
+        !is String -> "Not a string"
+        else -> "Unknown"
+    }
