@@ -6,6 +6,8 @@ fun main(args: Array<String>) {
      *  but they can make your code more concise and readable.
      */
 
+    letExample()
+    applyExample()
 }
 
 
@@ -27,4 +29,26 @@ fun letExample() {
         if (firstItem.length >= 5) firstItem else "!" + firstItem + "!"
     }.uppercase()
     println("First item after modifications: '$modifiedFirstItem'")
+}
+
+
+fun applyExample() {
+    /**
+     * As apply returns the context object itself,
+     * we recommend that you use it for code blocks that don't return a value
+     * and that mainly operate on the members of the receiver object.
+     * The most common use case for apply is for object configuration.
+     * Such calls can be read as "apply the following assignments to the object."
+     */
+    val adam = Person("Adam").apply {
+        age = 32
+        city = "London"
+    }
+    println(adam)
+}
+
+
+class Person(name: String) {
+    var age: Int = 1
+    var city: String = ""
 }
